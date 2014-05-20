@@ -43,6 +43,9 @@ class SubscriptionApi(object):
         url = self.base_url + "v1/subscriptions"
         contents = self.get(
             url,
+            token = False,
+            client_id = self.client_id,
+            client_secret = self.client_secret,
             object = object,
             aspect = aspect,
             object_id = object_id,
@@ -54,6 +57,9 @@ class SubscriptionApi(object):
         url = self.base_url + "v1/subscriptions"
         contents = self.delete(
             url,
+            token = False,
+            client_id = self.client_id,
+            client_secret = self.client_secret,
             object = object,
             aspect = aspect,
             object_id = object_id,

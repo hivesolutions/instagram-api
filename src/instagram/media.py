@@ -43,3 +43,8 @@ class MediaApi(object):
         url = self.base_url + "v1/media/popular"
         contents = self.get(url)
         return contents["data"]
+
+    def get_media(self, id):
+        url = self.base_url + "v1/media/%s" % id
+        contents = self.get(url)
+        return contents["data"]

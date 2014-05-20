@@ -39,7 +39,10 @@ __license__ = "GNU General Public License (GPL), Version 3"
 
 class UserApi(object):
 
-    def self_user(self):
-        url = self.base_url + "me"
+    def get_user(self, user_id):
+        url = self.base_url + "v1/users/%s" % user_id
         contents = self.get(url)
-        return contents
+        return contents["data"]
+
+    def self_user(self):
+        return self.get_user(self.user_id)

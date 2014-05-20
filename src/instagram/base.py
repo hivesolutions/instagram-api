@@ -76,6 +76,7 @@ class Api(
         self.redirect_url = kwargs.get("redirect_url", REDIRECT_URL)
         self.scope = kwargs.get("scope", SCOPE)
         self.access_token = kwargs.get("access_token", None)
+        self.user_id = kwargs.get("user_id", None)
 
     def oauth_authorize(self, state = None):
         url = self.base_url + "oauth/authorize"
@@ -101,9 +102,8 @@ class Api(
             redirect_uri = self.redirect_url,
             code = code
         )
-        contents = contents.decode("utf-8")
-        contents = appier.parse_qs(contents)
-        self.access_token = contents["access_token"][0]
+        self.access_token = contents["access_token"]
+        self.user_id = contents["user"]["id"]
         self.trigger("access_token", self.access_token)
-        if long: self.access_token = self.oauth_long_lived(self.access_token)
+        self.trigger("user_id", self.user_id)
         return self.access_token

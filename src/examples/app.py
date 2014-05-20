@@ -64,6 +64,7 @@ class InstagramApp(appier.WebApp):
         api = self.get_api()
         access_token = api.oauth_access(code)
         self.session["ig.access_token"] = access_token
+        self.session["ig.user_id"] = api.user_id
         return self.redirect(
             self.url_for("instagram.index")
         )
@@ -71,6 +72,7 @@ class InstagramApp(appier.WebApp):
     @appier.exception_handler(appier.OAuthAccessError)
     def oauth_error(self, error):
         if "ig.access_token" in self.session: del self.session["ig.access_token"]
+        if "ig.user_id" in self.session: del self.session["ig.user_id"]
         return self.redirect(
             self.url_for("instagram.index")
         )
@@ -83,8 +85,10 @@ class InstagramApp(appier.WebApp):
 
     def get_api(self):
         access_token = self.session and self.session.get("ig.access_token", None)
+        user_id = self.session and self.session.get("ig.user_id", None)
         api = base.get_api()
         api.access_token = access_token
+        api.user_id = user_id
         return api
 
 if __name__ == "__main__":

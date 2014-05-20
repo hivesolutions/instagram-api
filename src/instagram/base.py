@@ -39,7 +39,10 @@ __license__ = "GNU General Public License (GPL), Version 3"
 
 import appier
 
+from instagram import tag
 from instagram import user
+from instagram import media
+from instagram import subscription
 
 BASE_URL = "https://api.instagram.com/"
 """ The default base url to be used when no other
@@ -65,7 +68,10 @@ scope string for the oauth value """
 
 class Api(
     appier.OAuth2Api,
-    user.UserApi
+    tag.TagApi,
+    user.UserApi,
+    media.MediaApi,
+    subscription.SubscriptionApi
 ):
 
     def __init__(self, *args, **kwargs):

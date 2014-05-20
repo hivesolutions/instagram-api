@@ -19,6 +19,9 @@
 # You should have received a copy of the GNU General Public License
 # along with Hive Instagram API. If not, see <http://www.gnu.org/licenses/>.
 
+__author__ = "João Magalhães <joamag@hive.pt>"
+""" The author(s) of the module """
+
 __version__ = "1.0.0"
 """ The version of the module """
 
@@ -34,14 +37,9 @@ __copyright__ = "Copyright (c) 2008-2014 Hive Solutions Lda."
 __license__ = "GNU General Public License (GPL), Version 3"
 """ The license for the module """
 
-from . import base
-from . import media
-from . import subscription
-from . import tag
-from . import user
+class MediaApi(object):
 
-from .base import *
-from .media import *
-from .subscription import *
-from .tag import *
-from .user import *
+    def popular_media(self):
+        url = self.base_url + "v1/media/popular"
+        contents = self.get(url)
+        return contents["data"]

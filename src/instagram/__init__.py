@@ -40,8 +40,8 @@ from . import subscription
 from . import tag
 from . import user
 
-from .base import *
-from .media import *
-from .subscription import *
-from .tag import *
-from .user import *
+from .base import Api
+from .media import MediaApi
+from .subscription import SubscriptionApi
+from .tag import TagApi
+from .user import UserApi

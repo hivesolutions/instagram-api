@@ -3,5 +3,5 @@
 
 session.shelve*
 
-/dist/
-/src/instagram_api.egg-info/
+/dist
+/src/instagram_api.egg-info

@@ -40,7 +40,7 @@ from . import subscription
 from . import tag
 from . import user
 
-from .base import Api
+from .base import BASE_URL, Api
 from .media import MediaApi
 from .subscription import SubscriptionApi
 from .tag import TagApi

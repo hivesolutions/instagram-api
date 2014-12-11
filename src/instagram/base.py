@@ -76,10 +76,13 @@ class Api(
 
     def __init__(self, *args, **kwargs):
         appier.OAuth2Api.__init__(self, *args, **kwargs)
+        self.client_id = appier.conf("INSTAGRAM_ID", CLIENT_ID)
+        self.client_secret = appier.conf("INSTAGRAM_SECRET", CLIENT_SECRET)
+        self.redirect_url = appier.conf("INSTAGRAM_REDIRECT_URL", REDIRECT_URL)
         self.base_url = kwargs.get("base_url", BASE_URL)
-        self.client_id = kwargs.get("client_id", CLIENT_ID)
-        self.client_secret = kwargs.get("client_secret", CLIENT_SECRET)
-        self.redirect_url = kwargs.get("redirect_url", REDIRECT_URL)
+        self.client_id = kwargs.get("client_id", self.client_id)
+        self.client_secret = kwargs.get("client_secret", self.client_secret)
+        self.redirect_url = kwargs.get("redirect_url", self.redirect_url)
         self.scope = kwargs.get("scope", SCOPE)
         self.access_token = kwargs.get("access_token", None)
         self.user_id = kwargs.get("user_id", None)

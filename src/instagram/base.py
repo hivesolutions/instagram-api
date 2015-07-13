@@ -95,7 +95,7 @@ class Api(
             response_type = "code",
             scope = " ".join(self.scope)
         )
-        if state: values["state"] = state
+        if state: values["state"] = state.encode("utf-8")
         data = appier.legacy.urlencode(values)
         url = url + "?" + data
         return url

@@ -45,7 +45,7 @@ setuptools.setup(
     version = "0.1.1",
     author = "Hive Solutions Lda.",
     author_email = "development@hive.pt",
-    description = "Instagram API",
+    description = "Instagram API Client",
     license = "GNU General Public License (GPL), Version 3",
     keywords = "instagram api",
     url = "http://instagram.hive.pt",

@@ -43,8 +43,12 @@ from . import base
 
 class InstagramApp(appier.WebApp):
 
-    def __init__(self):
-        appier.WebApp.__init__(self, name = "instagram")
+    def __init__(self, *args, **kwargs):
+        appier.WebApp.__init__(
+            self,
+            name = "instagram",
+            *args, **kwargs
+        )
 
     @appier.route("/", "GET")
     def index(self):

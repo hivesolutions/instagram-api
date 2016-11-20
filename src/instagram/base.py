@@ -62,6 +62,7 @@ in case none is provided to the api (client) """
 
 SCOPE = (
     "basic",
+    "public_content"
 )
 """ The list of permissions to be used to create the
 scope string for the oauth value """

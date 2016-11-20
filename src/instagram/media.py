@@ -39,11 +39,6 @@ __license__ = "Apache License, Version 2.0"
 
 class MediaApi(object):
 
-    def popular_media(self):
-        url = self.base_url + "v1/media/popular"
-        contents = self.get(url)
-        return contents["data"]
-
     def get_media(self, id):
         url = self.base_url + "v1/media/%s" % id
         contents = self.get(url)

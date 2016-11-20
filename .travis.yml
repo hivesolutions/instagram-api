@@ -15,13 +15,13 @@ install:
   - pip install -r requirements.txt
   - pip install coveralls
   - pip install twine
-script: if [[ $TRAVIS_PYTHON_VERSION != "3.2" ]]; then coverage run --source=omni setup.py test; else python setup.py test; fi
+script: if [[ $TRAVIS_PYTHON_VERSION != "3.2" ]]; then coverage run --source=instagram setup.py test; else python setup.py test; fi
 after_success: if [[ $TRAVIS_PYTHON_VERSION != "3.2" ]]; then coveralls; fi
 deploy:
   provider: pypi
   user: joamag
   password:
-    secure: b/RpPhxebjmj7L2WHwlSrz+VPzhlRDPyP+c8Mch6QNq6xH32MwSq6UAl/zFzXn1gzEFS6ZRHQOfbrFNgrFzQWpv53F5bURm7PEQxv01IChn8IJh0iqu25R0/3vDZPxZ8j80fuRcg7ByB5asC7GBLhb3mjpSE9a69EtdXlXf1oLM=
+    secure: a0U6odxXJ4ZOP6A7PZo9NqHfv5teocRZv8uvpDW9RVWXBno300QiOYvQbeDGFBNvcf7dQgJPheDMHIQTvZGdK7K041S94PMR2C5eHuqFtAXC3qi0jMbEBmHYOXvY+hEJN89WeW9TganKJsOZRD0hv6lyAZWQb6mSlqz+gIoDPQ0=
   distributions: sdist bdist_wheel
   on:
     tags: true

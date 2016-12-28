@@ -98,3 +98,5 @@ class InstagramApp(appier.WebApp):
 if __name__ == "__main__":
     app = InstagramApp()
     app.serve()
+else:
+    __path__ = []

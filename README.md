@@ -1,4 +1,4 @@
-# [Instagram API](http://instagram_api.hive.pt)
+# [Instagram API](http://instagram-api.hive.pt)
 
 Implementation of the Instragram API.
 

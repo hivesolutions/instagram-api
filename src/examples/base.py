@@ -42,7 +42,7 @@ import appier
 import instagram
 
 def get_api():
-    return instagram.Api(
+    return instagram.API(
         client_id = appier.conf("INSTAGRAM_ID"),
         client_secret = appier.conf("INSTAGRAM_SECRET"),
         redirect_url = appier.conf("INSTAGRAM_REDIRECT_URL")

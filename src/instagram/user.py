@@ -37,7 +37,7 @@ __copyright__ = "Copyright (c) 2008-2017 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
-class UserApi(object):
+class UserAPI(object):
 
     def get_user(self, user_id):
         url = self.base_url + "v1/users/%s" % user_id

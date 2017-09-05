@@ -67,16 +67,16 @@ SCOPE = (
 """ The list of permissions to be used to create the
 scope string for the oauth value """
 
-class Api(
-    appier.OAuth2Api,
-    tag.TagApi,
-    user.UserApi,
-    media.MediaApi,
-    subscription.SubscriptionApi
+class API(
+    appier.OAuth2API,
+    tag.TagAPI,
+    user.UserAPI,
+    media.MediaAPI,
+    subscription.SubscriptionAPI
 ):
 
     def __init__(self, *args, **kwargs):
-        appier.OAuth2Api.__init__(self, *args, **kwargs)
+        appier.OAuth2API.__init__(self, *args, **kwargs)
         self.client_id = appier.conf("INSTAGRAM_ID", CLIENT_ID)
         self.client_secret = appier.conf("INSTAGRAM_SECRET", CLIENT_SECRET)
         self.redirect_url = appier.conf("INSTAGRAM_REDIRECT_URL", REDIRECT_URL)

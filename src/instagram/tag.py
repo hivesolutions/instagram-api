@@ -37,7 +37,7 @@ __copyright__ = "Copyright (c) 2008-2017 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
-class TagApi(object):
+class TagAPI(object):
 
     def media_tag(self, tag):
         url = self.base_url + "v1/tags/%s/media/recent" % tag

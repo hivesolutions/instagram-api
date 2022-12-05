@@ -5,4 +5,4 @@ session.shelve*
 
 /dist
 /build
-/src/instagram-api.egg-info
+/src/instagram_api.egg-info

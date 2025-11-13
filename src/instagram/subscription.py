@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Hive Instagram API
-# Copyright (c) 2008-2020 Hive Solutions Lda.
+# Copyright (c) 2008-2025 Hive Solutions Lda.
 #
 # This file is part of Hive Instagram API.
 #
@@ -22,47 +22,43 @@
 __author__ = "João Magalhães <joamag@hive.pt>"
 """ The author(s) of the module """
 
-__version__ = "1.0.0"
-""" The version of the module """
-
-__revision__ = "$LastChangedRevision$"
-""" The revision number of the module """
-
-__date__ = "$LastChangedDate$"
-""" The last change date of the module """
-
-__copyright__ = "Copyright (c) 2008-2020 Hive Solutions Lda."
+__copyright__ = "Copyright (c) 2008-2025 Hive Solutions Lda."
 """ The copyright for the module """
 
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
+
 class SubscriptionAPI(object):
 
-    def subscribe(self, object = "tag", aspect = "media", object_id = None, callback_url = None):
+    def subscribe(
+        self, object="tag", aspect="media", object_id=None, callback_url=None
+    ):
         url = self.base_url + "v1/subscriptions"
         contents = self.get(
             url,
-            token = False,
-            client_id = self.client_id,
-            client_secret = self.client_secret,
-            object = object,
-            aspect = aspect,
-            object_id = object_id,
-            callback_url = callback_url
+            token=False,
+            client_id=self.client_id,
+            client_secret=self.client_secret,
+            object=object,
+            aspect=aspect,
+            object_id=object_id,
+            callback_url=callback_url,
         )
         return contents["data"]
 
-    def unsubscribe(self, object = "tag", aspect = "media", object_id = None, callback_url = None):
+    def unsubscribe(
+        self, object="tag", aspect="media", object_id=None, callback_url=None
+    ):
         url = self.base_url + "v1/subscriptions"
         contents = self.delete(
             url,
-            token = False,
-            client_id = self.client_id,
-            client_secret = self.client_secret,
-            object = object,
-            aspect = aspect,
-            object_id = object_id,
-            callback_url = callback_url
+            token=False,
+            client_id=self.client_id,
+            client_secret=self.client_secret,
+            object=object,
+            aspect=aspect,
+            object_id=object_id,
+            callback_url=callback_url,
         )
         return contents["data"]

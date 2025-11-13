@@ -19,19 +19,8 @@
 # You should have received a copy of the Apache License along with
 # Hive Instagram API. If not, see <http://www.apache.org/licenses/>.
 
-__author__ = "João Magalhães <joamag@hive.pt>"
-""" The author(s) of the module """
-
 __copyright__ = "Copyright (c) 2008-2025 Hive Solutions Lda."
 """ The copyright for the module """
 
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
-
-
-class MediaAPI(object):
-
-    def get_media(self, id):
-        url = self.base_url + "v1/media/%s" % id
-        contents = self.get(url)
-        return contents["data"]

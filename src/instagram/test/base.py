@@ -28,10 +28,10 @@ __copyright__ = "Copyright (c) 2008-2025 Hive Solutions Lda."
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
 
+import unittest
 
-class MediaAPI(object):
 
-    def get_media(self, id):
-        url = self.base_url + "v1/media/%s" % id
-        contents = self.get(url)
-        return contents["data"]
+class BaseTest(unittest.TestCase):
+
+    def test_basic(self):
+        self.assertEqual(1 + 1, 2)

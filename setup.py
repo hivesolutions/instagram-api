@@ -42,6 +42,7 @@ setuptools.setup(
     url="http://instagram.hive.pt",
     zip_safe=False,
     packages=["instagram"],
+    test_suite="instagram.test",
     package_dir={"": os.path.normpath("src")},
     install_requires=["appier"],
     classifiers=[
